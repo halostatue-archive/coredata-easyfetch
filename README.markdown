@@ -33,7 +33,7 @@ This category is released under the MIT license.
 
 2. Import the header in an implementation file that uses Core Data where you need the functionality:
 
-<pre>#import "NSManagedObjectContext-EasyFetch.h"</pre>
+         #import "NSManagedObjectContext-EasyFetch.h"
 
 3. Call one of the category methods:
 
