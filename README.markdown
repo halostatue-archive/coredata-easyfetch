@@ -28,18 +28,18 @@ This category is released under the MIT license.
 
 1. Add the files to your Xcode project:
 
-          NSManagedObjectContext-EasyFetch.h
-          NSManagedObjectContext-EasyFetch.m
+        NSManagedObjectContext-EasyFetch.h
+        NSManagedObjectContext-EasyFetch.m
 
 2. Import the header in an implementation file that uses Core Data where you need the functionality:
 
-          #import "NSManagedObjectContext-EasyFetch.h"
+         #import "NSManagedObjectContext-EasyFetch.h"
 
 3. Call one of the category methods:
 
-          [[self managedObjectContext] fetchObjectsForEntityName:@"Employee"
-                                             predicateWithFormat:@"(lastName LIKE[c] 'Worsley') AND (salary > %@)",
-                                                                 minimumSalary];
+        [[self managedObjectContext] fetchObjectsForEntityName:@"Employee"
+                                           predicateWithFormat:@"(lastName LIKE[c] 'Worsley') AND (salary > %@)",
+                                                               minimumSalary];
 
 ## Methods in `NSManagedObjectContext (EasyFetch)`
 
