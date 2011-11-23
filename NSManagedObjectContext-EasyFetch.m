@@ -95,6 +95,10 @@
   NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:key
                                                        ascending:ascending];
 
+#if !__has_feature(objc_arc)
+  [sort autorelease];
+#endif
+
   return [self fetchObjectsForEntityName:entityName sortWith:[NSArray
                          arrayWithObject:sort] withPredicate:predicate];
 }
@@ -106,6 +110,11 @@
   NSEntityDescription* entity = [NSEntityDescription entityForName:entityName
                                             inManagedObjectContext:self];
   NSFetchRequest* request = [[NSFetchRequest alloc] init];
+
+#if !__has_feature(objc_arc)
+  [request retain];
+#endif
+
   [request setEntity:entity];
 
   if (predicate)
