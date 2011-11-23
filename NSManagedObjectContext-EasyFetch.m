@@ -92,9 +92,8 @@
                             ascending:(BOOL)ascending
                         withPredicate:(NSPredicate*)predicate
 {
-  NSSortDescriptor* sort = [[[NSSortDescriptor alloc] initWithKey:key
-                                                        ascending:ascending]
-                                                        autorelease];
+  NSSortDescriptor* sort = [[NSSortDescriptor alloc] initWithKey:key
+                                                       ascending:ascending];
 
   return [self fetchObjectsForEntityName:entityName sortWith:[NSArray
                          arrayWithObject:sort] withPredicate:predicate];
@@ -106,7 +105,7 @@
 {
   NSEntityDescription* entity = [NSEntityDescription entityForName:entityName
                                             inManagedObjectContext:self];
-  NSFetchRequest* request = [[[NSFetchRequest alloc] init] retain];
+  NSFetchRequest* request = [[NSFetchRequest alloc] init];
   [request setEntity:entity];
 
   if (predicate)
