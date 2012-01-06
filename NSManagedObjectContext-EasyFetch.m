@@ -130,6 +130,10 @@
   NSError* error = nil;
   NSArray* results = [self executeFetchRequest:request error:&error];
 
+#if !__has_feature(objc_arc)
+  [request release];
+#endif
+
   if (error != nil)
   {
     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
