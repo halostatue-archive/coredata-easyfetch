@@ -112,7 +112,7 @@
   NSFetchRequest* request = [[NSFetchRequest alloc] init];
 
 #if !__has_feature(objc_arc)
-  [request retain];
+  [request autorelease];
 #endif
 
   [request setEntity:entity];
@@ -129,10 +129,6 @@
 
   NSError* error = nil;
   NSArray* results = [self executeFetchRequest:request error:&error];
-
-#if !__has_feature(objc_arc)
-  [request release];
-#endif
 
   if (error != nil)
   {
