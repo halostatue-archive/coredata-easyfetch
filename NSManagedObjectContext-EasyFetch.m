@@ -133,7 +133,7 @@
   if (error != nil)
   {
     NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        [NSException raise:NSGenericException format:[error description]];
+        [NSException raise:NSGenericException format:@"%@", [error description]];
   }
 
   return results;
